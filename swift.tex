@@ -1,0 +1,230 @@
+\documentclass{beamer}
+\usetheme{Boadilla}
+\title[Cloud storage systems]{Object storage for OpenStack}
+\subtitle[Overview]{An Overview}
+\author[EternalTyro]{EternalTyro}
+\institute[A]{
+      MOAIM\\
+      Big City.\\[1ex]
+      \texttt{myemail@mydomain.com}
+}
+\date{June, 08 2013}
+\begin{document}
+
+%--- the titlepage frame -------------------------%
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+%--- the presentation begins here ----------------%
+\begin{frame}{Object Storage}
+
+\begin{itemize}
+ \item OpenStack Swift
+ \pause
+ \item inktank Ceph
+\end{itemize}
+\end{frame}
+
+\begin{frame}{OpenStack Swift}
+\begin{definition}{Swift is..}
+ ".. a highly available, distributed, eventually consistent object store.."
+\end{definition}
+\begin{itemize}
+ \item Code donated by Rackspace
+ \item Written in Python
+ \item Licensed under Apache
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Features}
+\begin{itemize}
+ \item Object Storage analogous to AWS S3
+ \pause
+ \item Scalable to petabytes
+ \pause
+ \item Eventually Consistent
+ \pause
+ \item Highly available
+ \pause
+ \item Durable and Robust
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Features contd..}
+\begin{itemize}
+ \item REST-ified API
+ \pause
+ \item Quotas and access control
+ \pause
+ \item S3 API support
+ \pause
+ \item Support for various storage backends
+ \pause
+ \item Works with commodity hardware
+\end{itemize}
+\end{frame}
+
+\begin{frame}{But...}
+\begin{itemize}
+ \item You can't mount it
+ \item Not good for live databases
+ \item You can't format it
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Authentication Systems}
+\begin{itemize}
+ \item Swauth
+ \item Keystone
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Components}
+\begin{itemize}
+ \item Proxy, Account \& container servers
+ \item Hash Rings
+ \item Auditors and Expirers
+ \item Replicators
+ \item memcache
+ \item rsync
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Proxy Server}
+\begin{itemize}
+ \item Handles authentication
+ \item Acts as a gatekeeper
+ \item handles req. from other services
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Object Server}
+\begin{itemize}
+ \item Handles Storage, retrieval, deletion of objects
+ \item Handles Updates \& replication
+ \item Performs Integrity Audits
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Container Server}
+\begin{itemize}
+ \item Keeps track of Objects
+ \item Object listing
+ \item SQLite backend
+ \item Globally Unique Names NOT necessary
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Account Server}
+\begin{itemize}
+ \item Keeps track of Containers
+ \item Lists containers
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Auditors \& Updators}
+\begin{itemize}
+ \item Detects bit-rots and filesystem corruption
+ \item Quarantines files as necessary
+ \pause
+ \item Updators check for list sanity
+ \item Maintains counters \& metadata
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Replicators \& expirers}
+\begin{itemize}
+ \item ensures enough replicas \& correct placement of replicas
+ \pause
+ \item Manages object deletion \& tombstones
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Swift rings}
+\begin{itemize}
+ \item Consisten hash ring
+ \item Manages partitions and replicas
+ \item Each of Obj, Cont, and Acc servers have their own rings
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{CEPH}
+\begin{definition}
+Ceph delivers " a distributed object store and file system designed to provide excellent performance, reliability and scalability"
+\end{definition}
+\begin{itemize}
+ \item Object, block and file storage in one unified system
+ \item Highly reliable
+ \item Higly scalable - to exabytes
+ \item Commodity hardware support
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Features}
+\begin{itemize}
+ \item Written in C++
+ \item Licensed under LGPL 2.1, BSD style licenses and PD
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Components}
+\begin{itemize}
+ \item Ceph FS - POSIX FS
+ \item Ceph Object Storage Device (OSD)
+ \item Ceph Monitor (MON)
+ \item Ceph Metadata Server (MDS)
+ \item Ceph clients
+\end{itemize}
+\end{frame}
+
+\begin{frame}{RADOS}
+\begin{itemize}
+ \item Reliable Autonomic Distributed Object Store
+ \item RADOSGW - bucket based REST gateway
+ \item compatible with S3 and Swift
+ \item RBD - Distributed block device
+ \item RBD has KVM driver and a kernel client
+ \item LIBRADOS - Language bindings
+\end{itemize}
+\end{frame}
+
+\begin{frame}{CRUSH}
+\begin{itemize}
+ \item Controlled Replication Under Scalable Hashing
+ \item No central lookup table
+ \item Location of objects computed
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Be a hero}
+\begin{itemize}
+ \item Code
+ \item Build, deploy and document
+ \item File bugs
+ \item ..or fix bugs
+ \item Document, blog and share
+ \item Both code available in GitHub
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Get Help}
+\begin{itemize}
+ \item IRC \#openstack on freenode
+ \item IRC \#ceph on oftc
+ \item Official Swift docn docs.openstack.org
+ \item Official ceph doc  ceph.com/docs
+ \item Blogs, wikis, etc..
+ \item Meetups
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Thank You!}
+\begin{center}
+Questions??
+\end{center}
+\end{frame}
+
+\end{document}
