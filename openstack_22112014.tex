@@ -1,0 +1,191 @@
+\documentclass{beamer}
+\usetheme{Boadilla}
+\title[OpenStack]{OpenStack Primer}
+\subtitle[Overview]{An Overview}
+\author[EternalTyro]{Eternal Tyro}
+\institute[A]{
+      Dummy Company\\
+      OpenStack India Meetup, Chennai\\[1ex]
+      \texttt{http://xxxyyyzzz.com}
+}
+\date{November, 22 2014}
+\begin{document}
+
+%--- the titlepage frame -------------------------%
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+%--- the presentation begins here ----------------%
+\begin{frame}{Cloud computing}
+
+\begin{definition}
+ ..computing resources provided over the Internet as services on demand via API calls..
+\end{definition}
+\pause
+
+\begin{itemize}
+ \item Computing resources
+ \pause
+ \item over the Internet (or network)
+ \pause
+ \item anything as a Service (*aaS)
+ \pause
+ \item service on demand
+ \pause
+ \item API access
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Available Cloud Platforms}
+Popular public cloud platforms: Internet based; little control on data and infrastructure.
+\begin{itemize}
+ \item Amazon Web Services (AWS)
+ \item Rackspace Cloud
+ \item Domestic players like Sify, ISPs, etc.
+\end{itemize}
+\pause
+Popular private cloud platforms: On premise.
+\begin{itemize}
+ \item Eucalyptus
+ \item OpenStack
+\end{itemize}
+\pause
+Public and private clouds may be mixed and used in a hybrid cloud model.
+\end{frame}
+
+\begin{frame}{OpenStack}
+\begin{itemize}
+ \item Cloud framework
+ \item Founded by NASA \& Rackspace
+ \item Compute \& Storage in the beginning
+ \item Written in Python
+ \item REST based APIs
+ \item Apache 2.0 Licensed
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Components}
+\begin{columns}[c]
+\column{0.5\textwidth}
+\begin{itemize}
+ \item Nova
+ \item Swift
+ \pause 
+ \item Glance
+ \item Cinder
+ \pause
+ \item Neutron
+ \pause
+ \item Keystone
+ \pause
+ \item Ceilometer
+ \item Horizon
+ \pause
+ \end{itemize}
+ \column{0.5\textwidth}
+ \begin{itemize}
+ \item Trove
+ \item Heat
+ \pause
+ \item Sahar
+ \item Zaqar
+ \item Barbican
+ \item Designate
+\end{itemize}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Nova}
+\begin{itemize}
+ \item Manages instances and their lifecycle
+ \item Multiple hypervisor support
+ \item Multi-architecture support
+ \item Host - Guest isolation; Guest - Guest isolation
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Swift}
+\begin{itemize}
+ \item Object Storage
+ \item REST API
+ \item Hash rings
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Glance}
+\begin{itemize}
+ \item Image delivery service
+ \item Snapshots
+ \item Multiple image formats supported
+ \item Can use Swift as storage back-end
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Cinder}
+\begin{itemize}
+ \item Block storage service
+ \item Persistant, Mountable
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Neutron}
+\begin{itemize}
+ \item Manages networking for instances
+ \item Pluggable, Modular, Scalable
+ \item API driven
+ \item Extension framework: IDS / FWaaS / LBaaS / VPN
+ \item ML2 plugin, L3 plugins
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Keystone}
+\begin{itemize}
+ \item Identity and access management
+ \item Password, token and key based access mechanisms
+ \item Multiple authentication mechanisms: X.509, KRB, LDAP, AD
+ \item RBAC
+ \item ...and APIs
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Other components}
+\begin{itemize}
+ \item Schedulers
+ \item Distribued Queue
+ \item Telemetry
+ \item Orchestration
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Be a hero}
+\begin{itemize}
+ \item Development - Gerrit Flow, CLA, PEP8, DVCS 
+ \item Testing 
+ \item Security help
+ \item Build, deploy and document
+ \item File bugs ..or fix bugs
+ \item UI/UX
+ \item Document, blog and share
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Get Help}
+\begin{itemize}
+ \item \#openstack on freenode
+ \item Documentation docs.openstack.org
+ \item https://ask.openstack.org
+ \item mailing lists
+ \item Blogs, wikis, etc..
+ \item Meetups
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Thank You!}
+\begin{center}
+Questions??
+\end{center}
+\end{frame}
+
+\end{document}
