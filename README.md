@@ -7,6 +7,6 @@ COMPILING TEX FILES
 ----------
 
     # Build PDF
-    $ pdflatex filename.tex
+    pdflatex filename.tex
     # Clean up
-    $ rm -f *.aux *.out *.snm *.nav *.log *.toc 
+    rm -f *.aux *.out *.snm *.nav *.log *.toc 
